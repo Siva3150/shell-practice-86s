@@ -6,5 +6,5 @@ echo "script name:$0
 echo "current directory of the script:$PWD"
 echo "Owner of the script:$USER"
 echo "Home Directory of the user:$HOME"
-echo "process id of the script:$$"
+echo "process id of the script: $$"
 
