@@ -3,7 +3,7 @@
 echo "please enter your number:"
 read NUMBER 
 
-if [ $(($NUMBER % 1)) -eq 0 ];  then 
+if [ $NUMBER -le 1 ];  then 
     echo "Given number: $NUMBER is prime"
 
 else 
