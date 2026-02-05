@@ -7,29 +7,25 @@ if [ $USERID -ne 0 ]; then
    exit 1
 fi 
 
-dnf install mysql -y 
+VALIDATE(){ # functions receive inputs through args just like shell script args
+    if [ $1 -ne 0 ]; then 
+      echo "Installation of $2 failed"
+      exit 1
+    else 
+     echo "Installation of $2 success"
+    fi 
 
-if [ $? -ne 0 ]; then 
-   echo "Installation of mysql failed"
-   exit 1
-else 
-   echo "Installation of mysql success"
-fi 
+}
+
+
+
+dnf install mysql -y 
+VALIDATE $? "MYSQL"
+
 
 dnf install git -y 
-
-if [ $? -ne 0 ]; then 
-   echo "Installation of git failed"
-   exit 1
-else 
-   echo "Installation of git success"
-fi 
+VALIDATE $? "GIT"
+ 
 
 dnf install python -y 
-
-if [ $? -ne 0 ]; then 
-   echo "Installation of python failed"
-   exit 1
-else 
-   echo "Installation of python success"
-fi 
+VALIDATE $? "PYTHON"
