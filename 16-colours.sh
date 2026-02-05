@@ -5,5 +5,5 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-echo -e " $R Hello World "
+echo -e " $R Hello World $N"
 echo "check this colour"
