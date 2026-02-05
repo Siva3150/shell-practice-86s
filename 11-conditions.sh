@@ -3,7 +3,7 @@
 echo "please enter your number:"
 read NUMBER 
 
-if [ $(($NUMBER % 2)) -eq 0];  then 
+if [ $(($NUMBER % 2)) -eq 0 ];  then 
 echo "Given number: $NUMBER is even"
 
 else 
