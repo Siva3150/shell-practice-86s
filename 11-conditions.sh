@@ -9,3 +9,4 @@ echo "Given number: $NUMBER is even"
 else 
 
 echo "Given number: $NUMBER is odd"
+fi
