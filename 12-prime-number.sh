@@ -8,5 +8,5 @@ if [ $NUMBER -le 1 ];  then
 
 else 
 
-    echo "Given number: $NUMBER is nor prime"
+    echo "Given number: $NUMBER is not prime"
 fi
