@@ -22,16 +22,29 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
 }
 
 
-# dnf list installed mysql
-# # Install if it is not found
+ dnf list installed mysql
+ # Install if it is not found
+ if [ $? -ne 0 ]; then
+  dnf install mysql -y 
+  VALIDATE $? "MYSQL"
+else
+  echo -e " Mysql already exists $Y skipping $N"
+fi
 
-dnf install mysql -y 
-VALIDATE $? "MYSQL"
 
+dnf list installed nginx
+if [ $? -ne 0 ]; then
+ dnf install nginx -y 
+ VALIDATE $? "nginx"
+else
+  echo -e " nginx already exists $Y skipping $N"
+fi
 
-dnf install git -y 
-VALIDATE $? "GIT"
  
-
-dnf install python -y 
-VALIDATE $? "PYTHON"
+dnf list installed  python3
+if [ $? -ne 0 ]; then
+ dnf install python3 -y 
+ VALIDATE $? "python3"
+else
+  echo -e " python3 already exists $Y skipping $N "
+fi
