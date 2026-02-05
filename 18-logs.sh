@@ -10,4 +10,4 @@ LOGS_FOLDER="/var/log/shell-script-logs"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" #/var/log/shell-script-logs/18-logs.log
 
-mkdir $LOGS_FOLDER
+mkdir -p $LOGS_FOLDER
